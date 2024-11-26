@@ -1,3 +1,5 @@
+import { Button } from "./ui/button";
+
 export const Footer = () => {
   return (
     <footer className="bg-white border-t border-gray-100">

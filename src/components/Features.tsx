@@ -1,4 +1,5 @@
 import { ShoppingCart, PenTool, Layout } from "lucide-react";
+import { Button } from "./ui/button";
 
 const features = [
   {
