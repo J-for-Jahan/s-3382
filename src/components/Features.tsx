@@ -1,20 +1,23 @@
-import { Laptop, Zap, Lock } from "lucide-react";
+import { ShoppingCart, PenTool, Layout } from "lucide-react";
 
 const features = [
   {
-    name: "Easy Integration",
-    description: "Set up in minutes with our seamless integration process",
-    icon: Laptop,
+    title: "Transform Your E-Commerce with AI Descriptions",
+    description: "Generate compelling product descriptions that convert browsers into buyers using our advanced AI technology.",
+    icon: ShoppingCart,
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
   },
   {
-    name: "Lightning Fast",
-    description: "Optimized performance for the smoothest user experience",
-    icon: Zap,
+    title: "Transform Your Content Creation with Our AI-Generated Article Writing Feature",
+    description: "Create engaging, SEO-optimized content in minutes with our AI-powered writing assistant.",
+    icon: PenTool,
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
   },
   {
-    name: "Enterprise Security",
-    description: "Bank-grade security to keep your data safe and protected",
-    icon: Lock,
+    title: "User-Friendly Interface for Seamless Experience",
+    description: "Intuitive design meets powerful functionality for an effortless workflow.",
+    icon: Layout,
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
   },
 ];
 
@@ -22,27 +25,31 @@ export const Features = () => {
   return (
     <div className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
-          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-            Everything you need to succeed
-          </h2>
-          <p className="mt-4 text-lg text-gray-600">
-            Our platform provides all the tools you need to grow your business
-          </p>
-        </div>
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature) => (
+        <div className="space-y-24">
+          {features.map((feature, index) => (
             <div
-              key={feature.name}
-              className="relative p-6 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow animate-fade-up"
+              key={feature.title}
+              className={`flex flex-col ${
+                index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+              } gap-12 items-center animate-fade-up`}
             >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                <feature.icon className="w-6 h-6 text-primary" />
+              <div className="lg:w-1/2 space-y-6">
+                <div className="w-12 h-12 rounded-xl bg-black/10 flex items-center justify-center mb-4">
+                  <feature.icon className="w-6 h-6 text-black" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">{feature.title}</h3>
+                <p className="text-gray-600 text-lg">{feature.description}</p>
+                <Button variant="outline" size="lg">
+                  Learn More →
+                </Button>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                {feature.name}
-              </h3>
-              <p className="text-gray-600">{feature.description}</p>
+              <div className="lg:w-1/2">
+                <img
+                  src={feature.image}
+                  alt={feature.title}
+                  className="rounded-lg shadow-xl w-full"
+                />
+              </div>
             </div>
           ))}
         </div>
