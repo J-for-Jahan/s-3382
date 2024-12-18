@@ -18,13 +18,11 @@ const Dashboard = () => {
     e.preventDefault();
     if (selectedFile) {
       console.log("File submitted:", selectedFile);
-      // Handle file submission logic here
     }
   };
 
   return (
     <div>
-      {/* Dashboard Navbar */}
       <nav className="border-b">
         <div className="flex h-16 items-center px-4 container mx-auto">
           <Link 
@@ -39,7 +37,6 @@ const Dashboard = () => {
 
       <div className="container mx-auto p-6">
         <div className="grid gap-6 md:grid-cols-2">
-          {/* Chat History Section */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -49,13 +46,11 @@ const Dashboard = () => {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                {/* Placeholder for chat history */}
                 <p className="text-sm text-muted-foreground">No chat history yet</p>
               </div>
             </CardContent>
           </Card>
 
-          {/* Profile Section */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -70,8 +65,8 @@ const Dashboard = () => {
                     <User className="h-6 w-6" />
                   </div>
                   <div>
-                    <p className="font-medium">John Doe</p>
-                    <p className="text-sm text-muted-foreground">john@example.com</p>
+                    <p className="font-medium">Guest User</p>
+                    <p className="text-sm text-muted-foreground">guest@example.com</p>
                   </div>
                 </div>
                 <Button variant="outline" className="w-full">Manage Profile</Button>
@@ -79,7 +74,6 @@ const Dashboard = () => {
             </CardContent>
           </Card>
 
-          {/* File Upload Section */}
           <Card className="md:col-span-2">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
